@@ -21,5 +21,5 @@ cli = make_cli_wrapper(cli)
 data = json.loads(cli('show lldp neighbors | json'))
 
 for key in data["TABLE_nbor"]["ROW_nbor"]:
-        cliCommand = "conf t; interface " + key["l_port_id"] + "; description " + key["chassis_id"]
+        cliCommand = "conf t ; interface " + key["l_port_id"] + " ; description " + key["chassis_id"]
         cli(cliCommand)
